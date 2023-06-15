@@ -12,17 +12,20 @@
 
   <body>
     <div class="main">
-      <nav>
-        <ul>
-          <li class="logo"><img src="assets/img/logo.png" />Musicly</li>
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Hindi</a></li>
-          <li><a href="#">Haryanavi</a></li>
-          <li><a href="#">Punjabi</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+      <header>
+        <div class="logo"><img src="assets/img/logo.png" />Musicly</div>
+        <nav>
+          <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Hindi</a></li>
+            <li><a href="#">Haryanavi</a></li>
+            <li><a href="#">Punjabi</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+      </header>
+
       <div class="main2">
         <div class="box">
           <div class="boxx">
@@ -30,47 +33,7 @@
               <h2>Songs For You</h2>
               <a href="#">More >></a>
             </div>
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1"><span class="song_time">04:34</span><i id="1" class="playr fa-regular fa-circle-play"></i></span>
-            </div>
-
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1"><span class="song_time">04:34</span><i id="2" class="playr fa-regular fa-circle-play"></i></span>
-            </div>
-
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1"><span class="song_time">04:34</span><i id="3" class="playr fa-regular fa-circle-play"></i></span>
-            </div>
-
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1"><span class="song_time">04:34</span><i id="4" class="playr fa-regular fa-circle-play"></i></span>
-            </div>
-
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1"><span class="song_time">04:34</span><i id="5" class="playr fa-regular fa-circle-play"></i></span>
-            </div>
-
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1"><span class="song_time">04:34</span><i id="6" class="playr fa-regular fa-circle-play"></i></span>
-            </div>
-
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1"><span class="song_time">04:34</span><i id="3" class="playr fa-regular fa-circle-play"></i></span>
-            </div>
+            <ul id="forYouList"></ul>
           </div>
         </div>
 
@@ -80,37 +43,15 @@
               <h2>Trending</h2>
               <a href="#">More >></a>
             </div>
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1">04:34<i id="8" class="fa-regular fa-circle-play"></i></span>
-            </div>
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1">04:34<i id="9" class="fa-regular fa-circle-play"></i></span>
-            </div>
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1">04:34<i id="10" class="fa-regular fa-circle-play"></i></span>
-            </div>
+            <ul id="trending"></ul>
           </div>
+
           <div class="boxx">
             <div class="head">
               <h2>Top Song 2023</h2>
               <a href="#">More >></a>
             </div>
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1">04:34<i id="11" class="fa-regular fa-circle-play"></i></span>
-            </div>
-            <div class="song_x1">
-              <img class="song_cover_x1" />
-              <span class="song_title_x1">Maa ki Su - Ajay Bhagta</span>
-              <span class="timestamp_x1">04:34<i id="12" class="fa-regular fa-circle-play"></i></span>
-            </div>
+            <ul id="topList"></ul>
           </div>
         </div>
       </div>
