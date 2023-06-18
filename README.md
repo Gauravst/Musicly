@@ -41,7 +41,7 @@ git clone https://github.com/Gauravst/Musicly.git
 - Customize your profile settings.
 - Explore recommended songs based on your listening history.
 
-### Credits
+<!-- ### Credits -->
 
 <!-- - [Open-source music API](https://example-music-api.com) - Provides access to a vast music library.
 - [Icons8](https://icons8.com) - Icons used in the app. -->
