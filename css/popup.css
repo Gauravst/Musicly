@@ -1,0 +1,81 @@
+.popupContainer {
+  background-color: #181f26;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  display: none;
+  overflow: hidden;
+}
+
+.popupBody {
+  display: flex;
+  padding: 20px 50px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.popupLeft {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupLeft > img {
+  height: 90%;
+  object-fit: contain;
+  border-radius: 9px;
+}
+
+.popupRight {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupMenu {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+
+.popupMenu > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-transform: uppercase;
+  width: 33%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+}
+
+.popupMenu > .active::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  bottom: 0px;
+  height: 3px;
+  width: 100%;
+}
+
+
+.popupContant{
+  padding: 0px 5px;
+  width: 100%;
+  overflow-y: auto;
+}

@@ -1,0 +1,165 @@
+#playerCont {
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  z-index: 2;
+  background-color: #181f26;
+}
+
+.playerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+}
+
+.playerContainer input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: #6a6d70;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+}
+
+.playerContainer input:hover {
+  -webkit-appearance: none;
+  height: 4px;
+}
+
+.playerContainer input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; 
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
+}
+
+/* .playerContainer input::-webkit-progress-bar {
+  -webkit-appearance: none;
+  appearance: none; 
+  background-color: red;
+}
+
+.playerContainer input::-webkit{
+  -webkit-appearance: none;
+  appearance: none; 
+  background-color: red;
+} */
+
+.playerBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+  height: 100%;
+}
+
+.playerRight {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.playerTime {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgb(219, 219, 219);
+  margin: 0px 20px 0px 8px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerTime span {
+  margin: 0px 5px;
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+}
+
+.playerCover {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
+  border-radius: 10px;
+}
+
+.playerBtn > ul {
+  display: flex;
+  height: 100%;
+}
+
+.playerBtn > ul > li {
+  list-style: none;
+  margin: 0px 5px;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
+}
+
+.playerBtn > ul > li:hover {
+  background-color: #474747;
+}
+
+.playerBtn > ul > li > i {
+  font-size: 22px;
+}
+
+.disable {
+  pointer-events: none;
+}
+
+.spin {
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(36deg);
+  }
+  20% {
+    transform: rotate(72deg);
+  }
+  30% {
+    transform: rotate(108deg);
+  }
+  40% {
+    transform: rotate(144deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(216deg);
+  }
+  70% {
+    transform: rotate(252deg);
+  }
+  80% {
+    transform: rotate(288deg);
+  }
+  90% {
+    transform: rotate(324deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

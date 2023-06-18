@@ -1,0 +1,15 @@
+
+# Ignore IDE or editor specific files
+.vscode/
+demo
+song
+
+# Ignore log files and other generated files
+*.log
+*.txt
+*.bak
+
+# Ignore sensitive or environment-specific information
+.env
+
+# Ignore any other files or directories you want to exclude

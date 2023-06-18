@@ -3,7 +3,7 @@
     {
       "song_id": 0,
       "song_name": "HAAD MASALA - GULZAAR CHHANIWALA",
-      "song_url": "https://t.ly/-ATEM",
+      "song_url": "../assets/song/song1.mp3",
       "song_cover": "https://t.ly/NrDs",
       "song_time": "03:28"
     },
@@ -68,7 +68,7 @@
       "song_id": 8,
       "song_name": "Jhanjran -  Babbu Maan",
       "song_url": "http://shorturl.at/itIQW",
-      "song_cover": "http://shorturl.at/goqt7",
+      "song_cover": "",
       "song_time": "03:14"
     },
 
