@@ -4,22 +4,20 @@ const header = document.querySelector("header");
 const playerContainer = document.querySelector(".playerContainer");
 const body = document.querySelector("body");
 
-popupBtn.addEventListener("click", () => {
-  const headerHeight = header.offsetHeight;
-  const playerHeight = playerContainer.offsetHeight;
+const popFun = () => {
   const windowHeight = document.documentElement.clientHeight;
-
-  const popupHeight = windowHeight - headerHeight - playerHeight;
-
+  const popupHeight = windowHeight - 160;
   popupContainer.style.height = popupHeight + "px";
-  popupContainer.style.top = headerHeight + "px";
 
   if (popupContainer.style.display === "none" || popupContainer.style.display === "") {
     header.style.backgroundColor = "#181f26";
     popupContainer.style.display = "block";
-    body.style.overflow = "hidden"
+    body.style.overflow = "hidden";
   } else {
     popupContainer.style.display = "none";
-    body.style.overflow = "auto"
+    body.style.overflow = "auto";
   }
-});
+};
+popupBtn.addEventListener("click", popFun);
+playerCover.addEventListener("click", popFun);
+playerSongName.addEventListener("click", popFun);

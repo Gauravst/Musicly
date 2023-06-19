@@ -2,12 +2,15 @@
 let currentAudio = null;
 let currentSong = null;
 let audio = new Audio();
+let heroHeight;
 
 // song list
 let forYouList = document.querySelector("#forYouList");
 let trending = document.querySelector("#trending");
 let topList = document.querySelector("#topList");
 let popupNextList = document.querySelector(".popupContant");
+
+let hero = document.querySelector("#hero");
 
 // player left btn & icon
 let back = document.querySelector("#backBtn");
@@ -17,6 +20,8 @@ let close = document.querySelector("#closeBtn");
 let backIcon = back.querySelector("i");
 let playIcon = play.querySelector("i");
 let nextIcon = next.querySelector("i");
+let reloadBtn = document.querySelector(".reloadBtn");
+let heartBtn = document.querySelector(".heartBtn");
 
 // player info
 let playerCont = document.querySelector("#playerCont");
@@ -45,18 +50,22 @@ const addSongs = (songs, item, where, cssClass) => {
     let songDiv = document.createElement("div");
     songDiv.className = cssClass;
 
-    songDiv.innerHTML = `
-      <div class="ItemLeft">
-        <img src=${song.song_cover || "../assets/img/cover.png"} class="songCover" />
-        <div class="songTitle">${title(song.song_name)}</div>
-      </div>
-      <div class="ItemRight">
-        <div class="songTime">${song.song_time}</div>
-        <i class="fa-solid fa-ellipsis-vertical"></i>
-      </div>
-    `;
+    let divL = document.createElement("div");
+    divL.className = "ItemLeft";
 
-    songDiv.addEventListener("click", () => {
+    let divR = document.createElement("div");
+    divR.className = "ItemRight";
+
+    divL.innerHTML = `<img src=${song.song_cover || "../assets/img/cover.png"} class="songCover" />
+    <div class="songTitle">${title(song.song_name)}</div>`;
+
+    divR.innerHTML = `<div class="songTime">${song.song_time}</div>
+    <i class="fa-solid fa-ellipsis-vertical"></i>`;
+
+    songDiv.appendChild(divL);
+    songDiv.appendChild(divR);
+
+    divL.addEventListener("click", () => {
       playSong(song);
     });
 
@@ -86,8 +95,6 @@ const playSong = async (song) => {
   if (currentAudio !== null) {
     await currentAudio.pause();
     currentAudio.currentTime = 0;
-    playIcon.classList.remove(...playIcon.classList);
-    playIcon.classList.add("fa", "fa-play");
   }
 
   audio.src = song.song_url;
@@ -98,15 +105,9 @@ const playSong = async (song) => {
   currentAudio = audio;
   currentSong = song;
 
-  playIcon.classList.remove(...playIcon.classList);
-  playIcon.classList.add("fa-solid", "fa-pause");
-  await audio.play();
-
-  if (currentSong) {
-    playerCont.style.display = "block";
-  } else {
-    playerCont.style.display = "none";
-  }
+  // heroHeight = hero.offsetHeight - 80;
+  // hero.style.height = heroHeight + "px";
+  playerCont.style.display = "block";
 };
 
 // play pause btn
@@ -114,13 +115,9 @@ play.addEventListener("click", async () => {
   if (playIcon.classList.contains("fa-play")) {
     if (currentSong !== null) {
       audio.play();
-      playIcon.classList.remove(...playIcon.classList);
-      playIcon.classList.add("fa-solid", "fa-pause");
     }
   } else {
     audio.pause();
-    playIcon.classList.remove(...playIcon.classList);
-    playIcon.classList.add("fa", "fa-play");
   }
 });
 
@@ -130,33 +127,56 @@ close.addEventListener("click", async () => {
   currentAudio = null;
   currentSong = null;
   playerCont.style.display = "none";
+
+  // heroHeight = hero.offsetHeight + 80;
+  // hero.style.height = heroHeight + "px";
+
   playIcon.classList.remove(...playIcon.classList);
   playIcon.classList.add("fa", "fa-play");
 });
 
-// audio loading listener
+reloadBtn.addEventListener("click", () => {
+  audio.load();
+});
+
+// audio event listener
+audio.addEventListener("play", () => {
+  playIcon.classList.remove(...playIcon.classList);
+  playIcon.classList.add("fa-solid", "fa-pause");
+});
+
+audio.addEventListener("pause", () => {
+  playIcon.classList.remove(...playIcon.classList);
+  playIcon.classList.add("fa", "fa-play");
+});
+
+audio.addEventListener("ended", () => {
+  console.log("Audio playback ended");
+});
+
 audio.addEventListener("loadstart", () => {
   playIcon.classList.remove(...playIcon.classList);
   playIcon.classList.add("fa", "fa-spinner", "spin");
   play.classList.add("disable");
+
+  // heroHeight = hero.offsetHeight - 80;
+  // hero.style.height = heroHeight + "px";
   playerCont.style.display = "block";
 });
 
 audio.addEventListener("canplaythrough", () => {
+  audio.play();
   playIcon.classList.remove(...playIcon.classList);
   playIcon.classList.add("fa", "fa-pause");
   play.classList.remove("disable");
 });
 
-// player time
 audio.addEventListener("timeupdate", () => {
   const currentTime = formatTime(audio.currentTime);
   const songDuration = currentSong.song_time;
   playerTime.innerHTML = `<span>${currentTime}</span> / <span>${songDuration}</span>`;
-
   const progress = (audio.currentTime / audio.duration) * 100;
   progressBar.value = progress;
-
 });
 
 function formatTime(time) {
@@ -171,6 +191,5 @@ progressBar.addEventListener("input", () => {
   const progress = progressBar.value;
   const duration = audio.duration;
   const currentTime = (progress / 100) * duration;
-
   audio.currentTime = currentTime;
 });

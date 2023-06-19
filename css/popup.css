@@ -1,8 +1,7 @@
 .popupContainer {
   background-color: #181f26;
   position: fixed;
-  top: 0;
-  bottom: 0;
+  top: 80px;
   width: 100%;
   z-index: 1;
   display: none;
