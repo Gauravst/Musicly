@@ -105,8 +105,6 @@ const playSong = async (song) => {
   currentAudio = audio;
   currentSong = song;
 
-  // heroHeight = hero.offsetHeight - 80;
-  // hero.style.height = heroHeight + "px";
   playerCont.style.display = "block";
 };
 
@@ -127,9 +125,6 @@ close.addEventListener("click", async () => {
   currentAudio = null;
   currentSong = null;
   playerCont.style.display = "none";
-
-  // heroHeight = hero.offsetHeight + 80;
-  // hero.style.height = heroHeight + "px";
 
   playIcon.classList.remove(...playIcon.classList);
   playIcon.classList.add("fa", "fa-play");
@@ -159,8 +154,6 @@ audio.addEventListener("loadstart", () => {
   playIcon.classList.add("fa", "fa-spinner", "spin");
   play.classList.add("disable");
 
-  // heroHeight = hero.offsetHeight - 80;
-  // hero.style.height = heroHeight + "px";
   playerCont.style.display = "block";
 });
 
@@ -173,7 +166,7 @@ audio.addEventListener("canplaythrough", () => {
 
 audio.addEventListener("timeupdate", () => {
   const currentTime = formatTime(audio.currentTime);
-  const songDuration = currentSong.song_time;
+  const songDuration = formatTime(audio.duration);
   playerTime.innerHTML = `<span>${currentTime}</span> / <span>${songDuration}</span>`;
   const progress = (audio.currentTime / audio.duration) * 100;
   progressBar.value = progress;
@@ -193,3 +186,4 @@ progressBar.addEventListener("input", () => {
   const currentTime = (progress / 100) * duration;
   audio.currentTime = currentTime;
 });
+

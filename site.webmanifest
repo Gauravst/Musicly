@@ -1,0 +1,13 @@
+{
+  "name": "Musicly | Music is Life",
+  "short_name": "Musicly is a web-based music application.",
+  "description": "Musicly is a web-based music application that allows users to listen to their favorite songs, discover new music, create playlists, and enjoy a seamless music experience.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4285f4",
+  "icons": [
+    { "src": "assets/img/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
