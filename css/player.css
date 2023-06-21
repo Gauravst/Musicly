@@ -42,18 +42,6 @@
   cursor: pointer;
 }
 
-/* .playerContainer input::-webkit-progress-bar {
-  -webkit-appearance: none;
-  appearance: none; 
-  background-color: red;
-}
-
-.playerContainer input::-webkit{
-  -webkit-appearance: none;
-  appearance: none; 
-  background-color: red;
-} */
-
 .playerBody {
   display: flex;
   justify-content: space-between;

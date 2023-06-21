@@ -1,7 +1,9 @@
 .main {
-  padding: 110px 40px 110px 50px;
+  padding-top: 80px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 form {
@@ -57,4 +59,23 @@ form button:hover {
   color: white;
   padding: 0px 7px;
   font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+  form{
+    width: 60%;
+  }
+}
+
+@media (max-width : 700px) {
+  form{
+    width: 80%;
+  }
+}
+
+@media (max-width : 500px) {
+  form{
+    width: 90%;
+    padding: 35px 25px;
+  }
 }

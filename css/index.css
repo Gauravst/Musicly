@@ -68,7 +68,7 @@
   border-radius: 50%;
   height: 43px;
   width: 43px;
-  margin: 5px 10px;
+  margin: 5px 10px 5px 0px;
   cursor: pointer;
 }
 
@@ -84,7 +84,6 @@
 }
 
 .ItemRight {
-  margin: 0px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,11 +93,44 @@
 
 .ItemRight i {
   font-size: 16px;
-  margin-left: 25px;
-  color: #e2e0e0;
+  margin-left: 10px;
+  list-style: none;
   cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
 }
 
-@media () {
+.ItemRight i:hover{
+  background-color: #807f7f;
+}
 
+@media (max-width: 1000px) {
+  #hero{
+    grid-template-columns: repeat(1, 1fr);
+    padding: 110px 20px 110px 30px;
+  }
+}
+
+
+@media (max-width : 500px) {
+  #hero{
+    padding: 100px 10px 100px 20px;
+  }
+
+  .boxx{
+    padding: 20px 15px 10px 15px;
+  }
+
+  .head{
+    margin-bottom:  25px;
+  }
+
+  .songItem{
+    padding: 5px 5px;
+  }
 }
