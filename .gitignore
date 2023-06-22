@@ -1,8 +1,8 @@
 
 # Ignore IDE or editor specific files
+config.js
 .vscode/
-demo
-song
+
 
 # Ignore log files and other generated files
 *.log
